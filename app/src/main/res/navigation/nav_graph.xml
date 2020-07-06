@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/cameraPreviewFragment">
+
+    <fragment
+        android:id="@+id/cameraPreviewFragment"
+        android:name="com.krystofmacek.landmarker.ui.CameraPreviewFragment"
+        android:label="fragment_camera_preview"
+        tools:layout="@layout/fragment_camera_preview" >
+        <action
+            android:id="@+id/action_cameraPreviewFragment_to_landmarksFragment"
+            app:destination="@id/landmarksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/landmarkDetailFragment"
+        android:name="com.krystofmacek.landmarker.ui.LandmarkDetailFragment"
+        android:label="fragment_landmark_detail"
+        tools:layout="@layout/fragment_landmark_detail" >
+        <action
+            android:id="@+id/action_landmarkDetailFragment_to_cameraPreviewFragment"
+            app:destination="@id/cameraPreviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/landmarksFragment"
+        android:name="com.krystofmacek.landmarker.ui.LandmarksFragment"
+        android:label="fragment_landmarks"
+        tools:layout="@layout/fragment_landmarks" >
+        <action
+            android:id="@+id/action_landmarksFragment_to_landmarkDetailFragment"
+            app:destination="@id/landmarkDetailFragment" />
+        <action
+            android:id="@+id/action_landmarksFragment_to_cameraPreviewFragment"
+            app:destination="@id/cameraPreviewFragment" />
+    </fragment>
+</navigation>
